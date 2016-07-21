@@ -16,6 +16,7 @@ config :nerves_system_rpi3, :nerves_env,
     defconfig: "nerves_defconfig",
     package_files: [
       "rootfs-additions",
+      "rpi3-ap-busybox.config",
       "linux-4.1.defconfig",
       "fwup.conf",
       "cmdline.txt",
