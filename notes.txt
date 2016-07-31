@@ -1,3 +1,12 @@
+# HERE ARE MY NOTES
+# Step 1: rm build dir to start clean (just to be thorough)
+# Step 2: ../nerves_system_br/create-build.sh nerves_defconfig build
+# Step 3: cd build && make && make system
+# Step 4: cp build/nerves_system_rpi3.tar.gz to share that I can access from OSX host
+# Step 5: extract .tar.gz and rebuild app (mix compile && mix firmware && mix firmware.burn)
+# Step 6: essentially the steps below are what we tried last week over skype
+          setup-iptables is where I get stuck
+
 sysctl -w net.ipv4.ip_forward=1
 
 
@@ -7,3 +16,25 @@ ip route add default via 192.168.1.1
 
 ip link set wlan0 up
 ip addr add 192.168.24.1/24 dev wlan0
+
+./setup-iptables
+# ^^^  here is where I'm getting errors
+#   iptables v1.6.0: Couldn't load match `mark' :No such file or directory
+#     from lines 26 & 48 in setup_iptables script
+#   iptables v1.6.0: unknown option "--clamp-mss-to-pmtu"
+#     from line 41 in setup_iptables script
+
+
+dnsmasq --dhcp-lease /root/dnsmasq.lease
+
+hostapd -B -d /etc/hostapd/hostapd.conf
+
+
+Step 7: additional commands that I need
+arp -a
+arp -a [SOME_CONNECTED_ID]
+conntrack -D --orig-src [SOME_CONNECTED_IP]
+iptables -t mangle -A wlan0_Outgoing -m mac --mac-source [SOME CONNECTED MAC] -j MARK --set-mark 2
+# ^^^^ this last command also returns an error
+#    iptables v1.6.0: unknown option "--set-mark"
+
