@@ -1,5 +1,9 @@
 # Raspberry Pi 3 Model B
-[![Build Status](https://travis-ci.org/nerves-project/nerves_system_rpi3.png?branch=master)](https://travis-ci.org/nerves-project/nerves_system_rpi3)
+## Custom Built system with Wireless AP features
+
+Forked from the [nerves-project/nerves_system_rpi3](nerves-project/nerves_system_rpi3)
+
+**NOTE: **Reference that repository along with [nerves-project/nerves_system_br](nerves-project/nerves_system_br) for instructions about how to build this system for your own application
 
 This is the base Nerves System configuration for the Raspberry Pi 3 Model B.
 
