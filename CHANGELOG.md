@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.9.0
+
+This version switches to using the `nerves_package` compiler. This will
+consolidate overall deps and compilers.
+
+  * Nerves.System.BR v0.8.1
+    * Support for distillery
+    * Support for nerves_package compiler
+
+## v0.7.0
+
+When upgrading to this version, be sure to review the updates to
+nerves_defconfig if you have customized this system.
+
+  * nerves_system_br v0.6.2
+    * Package updates
+      * Buildroot 2016.08
+      * Linux 4.4
+
+## v0.6.1
+
+  * Package versions
+    * Nerves.System.BR v0.6.1
+
+  * New features
+    * All Raspberry Pi 3-specific configuration is now in this repository
+
 ## v0.6.0
   * Nerves.System.BR v0.6.0
     * Package updates
