@@ -5,22 +5,26 @@ version =
   |> File.read!
   |> String.strip
 
-config :nerves_system_rpi3, :nerves_env,
+pkg = :nerves_system_rpi3_ap
+
+config pkg, :nerves_env,
   type: :system,
   version: version,
-  mirrors: [
-    "https://github.com/nerves-project/nerves_system_rpi3/releases/download/v#{version}/nerves_system_rpi3-v#{version}.tar.gz",
-    "https://s3.amazonaws.com/nerves/artifacts/nerves_system_rpi3-#{version}.tar.gz"],
-  build_platform: Nerves.System.Platforms.BR,
-  build_config: [
+  compiler: :nerves_package,
+  artifact_url: [
+    "https://github.com/joelbyler/nerves_system_rpi3_ap/releases/download/v0.9.1/nerves_system_rpi3_ap.tar.gz",
+  ],
+  platform: Nerves.System.BR,
+  platform_config: [
     defconfig: "nerves_defconfig",
-    package_files: [
-      "rootfs-additions",
-      "rpi3-ap-busybox.config",
-      "linux-4.1.defconfig",
-      "fwup.conf",
-      "cmdline.txt",
-      "config.txt",
-      "post-createfs.sh"
-    ]
+  ],
+  checksum: [
+    "rootfs-additions",
+    "rpi3-ap-busybox.config",
+    "linux-4.4.defconfig",
+    "fwup.conf",
+    "cmdline.txt",
+    "config.txt",
+    "post-createfs.sh",
+    "VERSION"
   ]

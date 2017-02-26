@@ -1,5 +1,9 @@
 # Raspberry Pi 3 Model B
-[![Build Status](https://travis-ci.org/nerves-project/nerves_system_rpi3.png?branch=master)](https://travis-ci.org/nerves-project/nerves_system_rpi3)
+## Custom Built system with Wireless AP features
+
+Forked from the [nerves-project/nerves_system_rpi3](nerves-project/nerves_system_rpi3)
+
+**NOTE: **Reference that repository along with [nerves-project/nerves_system_br](nerves-project/nerves_system_br) for instructions about how to build this system for your own application
 
 This is the base Nerves System configuration for the Raspberry Pi 3 Model B.
 
@@ -29,7 +33,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   1. Add nerves_system_rpi3 to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:nerves_system_rpi3, "~> 0.5.2"}]
+          [{:nerves_system_rpi3, "~> 0.6.1"}]
         end
 
   2. Ensure nerves_system_rpi3 is started before your application:
